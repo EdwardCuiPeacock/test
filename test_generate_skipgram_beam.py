@@ -26,7 +26,7 @@ def make_preproc_func(vocabulary_size, window_size, negative_samples, feature_na
         
         for i in range(s.shape[0]):
             pairs, labels = skipgrams(
-                    s[i, :], vocabulary_size=100, window_size=window_size, 
+                    s[i, :], vocabulary_size=vocabulary_size, window_size=window_size, 
                     negative_samples=negative_samples, seed=42,
                 )
             samples = np.concatenate([np.atleast_2d(np.asarray(pairs)), np.asarray(labels)[:, None]], axis=1)
